@@ -36,12 +36,20 @@ def linear_search(search_sequence, number):
     return slovnik
 
 
+def pattern_search(search_sequence, hledany_vzor):
+    positions = []
+    for index in range(len(search_sequence) - len(hledany_vzor)):
+        if search_sequence[index:index + len(hledany_vzor)] == hledany_vzor:
+            positions.append(index)
+    return positions
+
+
 
 def main():
     unordered_numbers = read_data("sequential.json", "unordered_numbers")
     print(unordered_numbers)
     search_output_dict = linear_search(unordered_numbers, 0)
     print(search_output_dict)
-
+    print(pattern_search(read_data("sequential.json", "dna_sequence"), "ACG"))
 if __name__ == '__main__':
     main()
