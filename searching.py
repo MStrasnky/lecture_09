@@ -39,7 +39,13 @@ def linear_search(search_sequence, number):
 def pattern_search(search_sequence, hledany_vzor):
     positions = []
     for index in range(len(search_sequence) - len(hledany_vzor)):
-        if search_sequence[index:index + len(hledany_vzor)] == hledany_vzor:
+        subsequence = search_sequence[index:index + len(hledany_vzor)]
+        same = True
+        for letter_sequence, letter_vzor in zip(subsequence, hledany_vzor):
+            if letter_sequence != letter_vzor:
+                same = False
+                break
+        if same:
             positions.append(index)
     return positions
 
