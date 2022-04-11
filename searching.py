@@ -50,6 +50,17 @@ def pattern_search(search_sequence, hledany_vzor):
     return positions
 
 
+def binary_search(list_of_numbers, number):
+    index = 0
+    left_margain = list_of_numbers[0]
+    right_margain = list_of_numbers[-1]
+    middle_index = (len(list_of_numbers) - 1) / 2
+    same = False
+    while True:
+        if
+
+
+
 
 def main():
     unordered_numbers = read_data("sequential.json", "unordered_numbers")
