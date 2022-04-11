@@ -19,9 +19,29 @@ def read_data(file_name, field):
     if field in set(data.keys()):
         return data[field]
 
+
+def linear_search(search_sequence, number):
+    positions = []
+    count = 0
+
+    for index, cislo in enumerate(search_sequence):
+        if number == cislo:
+            count += 1
+            positions.append(index)
+    slovnik = dict()
+    slovnik["positions"] = positions
+    slovnik["count"] = count
+
+
+    return slovnik
+
+
+
 def main():
     unordered_numbers = read_data("sequential.json", "unordered_numbers")
     print(unordered_numbers)
+    search_output_dict = linear_search(unordered_numbers, 0)
+    print(search_output_dict)
 
 if __name__ == '__main__':
     main()
